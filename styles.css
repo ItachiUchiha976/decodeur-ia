@@ -198,6 +198,23 @@ mark.term-hit:hover{background:rgba(34,211,238,.32)}
 }
 .email-form input:focus{outline:none;border-color:var(--cyan)}
 .email-msg{color:var(--green);font-weight:600;margin-top:14px}
+.email-legal{color:var(--muted);font-size:.78rem;margin:14px 0 0}
+
+/* ===== Social proof ===== */
+.social-proof{font-size:.84rem;color:var(--text-dim);margin:14px auto 0;display:inline-flex;align-items:center;gap:.4em}
+.social-proof span{color:var(--green);font-weight:700}
+
+/* ===== Decoder next-step CTA ===== */
+.decoder-next{
+  display:block;margin-top:4px;background:var(--panel-2);
+  border:1px solid var(--line-strong);border-left:3px solid var(--violet);
+  border-radius:var(--radius-sm);padding:12px 14px;color:var(--text);
+  font-size:.94rem;font-weight:600;transition:.16s;min-height:44px
+}
+.decoder-next:hover{border-color:var(--violet);background:rgba(167,139,250,.12)}
+
+/* ===== Badge gratuit ===== */
+.badge-free{position:absolute;top:14px;right:14px;font-size:.7rem;font-weight:700;background:rgba(52,211,153,.2);color:var(--green);padding:.25em .6em;border-radius:6px}
 
 /* ===== Resources ===== */
 .resources{padding:20px 18px 60px}

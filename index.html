@@ -99,6 +99,7 @@
       <p class="eyebrow">Glossaire interactif · 45 mots de l'IA · 100&nbsp;% gratuit</p>
       <h1>Le jargon de l'IA, enfin <span class="grad">décodé</span>.</h1>
       <p class="lead">Token, LLM, RAG, hallucination, embedding… Colle n'importe quel texte&nbsp;: l'outil repère chaque terme technique et te l'explique simplement. Ou explore le glossaire complet.</p>
+      <p class="social-proof"><span aria-hidden="true">✓</span> 45&nbsp;termes de l'IA couverts · 100&nbsp;% gratuit, sans inscription</p>
       <div class="hero-actions">
         <a href="#decodeur" class="btn btn-primary">Décoder un texte</a>
         <a href="#glossaire" class="btn btn-ghost">Parcourir le glossaire</a>
@@ -173,32 +174,36 @@
 
   <section class="email-capture wrap">
     <div class="email-card">
-      <h3>📬 Les prochains outils en avant-première</h3>
-      <p>D'autres outils IA gratuits arrivent. Laisse ton e-mail pour être prévenu en premier (zéro spam).</p>
-      <form id="email-form" class="email-form">
-        <input id="email-input" type="email" required placeholder="ton@email.com" aria-label="Ton adresse e-mail" />
-        <button type="submit" class="btn btn-primary">Me prévenir</button>
+      <h3>📨 1 concept IA par semaine, en 60 secondes</h3>
+      <p>Un terme de l'IA expliqué simplement chaque semaine, directement dans ta boîte mail. Et tu es prévenu en premier des prochains outils gratuits.</p>
+      <form id="email-form" class="email-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="d97a8c73-b827-48bb-b437-e053a73fdb7e">
+        <input type="hidden" name="subject" value="IA Décodée — nouveau lead">
+        <input type="hidden" name="from_name" value="IA Décodée">
+        <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1" autocomplete="off">
+        <input id="email-input" name="email" type="email" required placeholder="ton@email.com" aria-label="Ton adresse e-mail" />
+        <button type="submit" class="btn btn-primary">Je m'abonne</button>
       </form>
-      <p id="email-msg" class="email-msg" hidden>✅ C'est noté, merci&nbsp;! Tu seras prévenu pour les prochains outils.</p>
+      <p class="email-legal">Pas de spam. Désinscription en 1 clic. Tes données ne sont jamais revendues.</p>
+      <p id="email-msg" class="email-msg" hidden>✅ Merci&nbsp;! Tu es sur la liste.</p>
     </div>
   </section>
 
   <section class="resources wrap">
     <h2>Pour aller plus loin</h2>
-    <p class="resources-sub">Des ressources utiles pour progresser avec l'IA. <span class="muted">(D'autres recommandations à venir.)</span></p>
+    <p class="resources-sub">Des ressources utiles pour progresser avec l'IA et choisir tes outils.</p>
     <div class="resource-grid">
       <a class="resource-card" href="https://www.youtube.com/@iadecodefr" target="_blank" rel="noopener">
         <span class="resource-ico">🎬</span>
         <h3>La chaîne IA Décodée</h3>
         <p>Des vidéos courtes pour comprendre l'IA un concept à la fois.</p>
       </a>
-      <div class="resource-card soon">
-        <span class="resource-ico">🧰</span>
-        <h3>Plus d'outils gratuits</h3>
-        <p>Calculateurs, comparateurs, guides… en préparation.</p>
-        <span class="badge-soon">Bientôt</span>
-      </div>
-      <!-- Emplacement prêt pour des recommandations d'outils (affiliation possible). -->
+      <a class="resource-card" href="https://itachiuchiha976.github.io/comparateur-ia" target="_blank" rel="sponsored nofollow noopener">
+        <span class="resource-ico">🧠</span>
+        <h3>Quel outil IA te convient&nbsp;?</h3>
+        <p>ChatGPT, Claude, Gemini… Compare les meilleurs outils en 2&nbsp;minutes et trouve le tien.</p>
+        <span class="badge-free">Gratuit</span>
+      </a>
     </div>
   </section>
 </main>
@@ -210,6 +215,7 @@
       <strong>IA Décodée</strong> — l'intelligence artificielle expliquée simplement.
     </div>
     <p class="footer-note">Définitions pédagogiques évergreen, vérifiées en juin 2026. Cet outil vulgarise&nbsp;: pour un usage professionnel, recoupe toujours avec les sources officielles.</p>
+    <p class="footer-note">Ce site peut contenir des liens partenaires (affiliation). Cela ne change rien au prix pour toi et nous aide à garder ces outils gratuits.</p>
     <div class="footer-links">
       <a href="https://www.youtube.com/@iadecodefr?sub_confirmation=1" target="_blank" rel="noopener">YouTube</a>
       <a href="#decodeur">Décodeur</a>

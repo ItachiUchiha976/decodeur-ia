@@ -96,6 +96,7 @@
         var t = TERMS[ti];
         out += '<div class="det-card"><h4>' + escapeHtml(t.term) + "</h4><p>" + escapeHtml(t.short) + "</p></div>";
       });
+      out += '<a class="decoder-next" href="https://itachiuchiha976.github.io/comparateur-ia" target="_blank" rel="sponsored nofollow noopener">🧠 Tu veux choisir le bon outil IA&nbsp;? → Voir le comparateur gratuit</a>';
       detEl.innerHTML = out;
     }
 
@@ -249,6 +250,7 @@
         '<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px">' +
         '<button class="btn btn-ghost" id="quiz-again">Rejouer</button>' +
         '<a class="btn btn-sub" href="https://www.youtube.com/@iadecodefr?sub_confirmation=1" target="_blank" rel="noopener"><span class="yt-ico">▶</span> S\'abonner pour en apprendre plus</a>' +
+        '<a class="btn btn-primary" href="https://itachiuchiha976.github.io/comparateur-ia" target="_blank" rel="sponsored nofollow noopener">Trouver mon outil IA →</a>' +
         "</div>";
       $("#quiz-again", quizBox).addEventListener("click", startQuiz);
     }
@@ -259,19 +261,40 @@
   });
 
   /* ========================================================= */
-  /* CAPTURE EMAIL (stub localStorage)                          */
+  /* CAPTURE EMAIL (Web3Forms — AJAX)                           */
   /* ========================================================= */
-  $("#email-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    var val = $("#email-input").value.trim();
-    if (!val) return;
-    try {
-      var list = JSON.parse(localStorage.getItem("ia_decodee_emails") || "[]");
-      list.push({ email: val, date: new Date().toISOString() });
-      localStorage.setItem("ia_decodee_emails", JSON.stringify(list));
-    } catch (err) {}
-    $("#email-form").style.display = "none";
-    $("#email-msg").hidden = false;
-  });
+  var emailForm = $("#email-form");
+  if (emailForm) {
+    emailForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var val = ($("#email-input").value || "").trim();
+      if (!val) return;
+      var btn = $("button[type='submit']", emailForm);
+      if (btn) { btn.disabled = true; btn.textContent = "Envoi…"; }
+      fetch(emailForm.action, {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: new FormData(emailForm)
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data && data.success) {
+            emailForm.style.display = "none";
+            $("#email-msg").hidden = false;
+          } else {
+            if (btn) { btn.disabled = false; btn.textContent = "Je m'abonne"; }
+            $("#email-msg").hidden = false;
+            $("#email-msg").textContent = "Hmm, une erreur est survenue. Réessaie dans un instant.";
+            $("#email-msg").style.color = "var(--amber)";
+          }
+        })
+        .catch(function () {
+          if (btn) { btn.disabled = false; btn.textContent = "Je m'abonne"; }
+          $("#email-msg").hidden = false;
+          $("#email-msg").textContent = "Connexion impossible. Vérifie ta connexion et réessaie.";
+          $("#email-msg").style.color = "var(--amber)";
+        });
+    });
+  }
 
 })();
