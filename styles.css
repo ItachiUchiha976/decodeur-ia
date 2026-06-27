@@ -232,6 +232,36 @@ a.resource-card:hover{transform:translateY(-3px);border-color:var(--line-strong)
 .resource-card.soon{opacity:.72}
 .badge-soon{position:absolute;top:14px;right:14px;font-size:.7rem;font-weight:700;background:rgba(129,140,248,.2);color:var(--indigo);padding:.25em .6em;border-radius:6px}
 
+/* ===== Product offer ===== */
+.product-offer{padding:10px 18px 50px}
+.product-offer-card{
+  background:linear-gradient(135deg,rgba(129,140,248,.11),rgba(167,139,250,.09));
+  border:1px solid rgba(167,139,250,.32);border-radius:var(--radius);
+  padding:36px 32px;max-width:680px;margin:0 auto;text-align:center;
+  position:relative;overflow:hidden
+}
+.product-offer-card::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(600px 300px at 50% -10%,rgba(167,139,250,.10),transparent 70%);
+  pointer-events:none
+}
+.product-offer-badge{
+  display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.5px;
+  text-transform:uppercase;color:var(--violet);background:rgba(167,139,250,.14);
+  border:1px solid rgba(167,139,250,.28);border-radius:999px;padding:.3em .95em;margin-bottom:18px
+}
+.product-offer-card h2{font-size:clamp(1.3rem,4vw,1.8rem);margin-bottom:14px}
+.product-offer-pitch{color:var(--text-dim);max-width:540px;margin:0 auto 22px;font-size:1.02rem}
+.product-offer-list{
+  list-style:none;padding:0;margin:0 auto 28px;max-width:480px;
+  text-align:left;display:flex;flex-direction:column;gap:9px
+}
+.product-offer-list li{display:flex;align-items:flex-start;gap:.55em;color:var(--text-dim);font-size:.94rem}
+.product-offer-list li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:.08em}
+.product-offer-cta{display:flex;flex-direction:column;align-items:center;gap:10px}
+.product-offer-sub{color:var(--muted);font-size:.8rem;margin:0}
+@media(max-width:520px){.product-offer-card{padding:26px 18px}}
+
 /* ===== Footer ===== */
 .site-footer{border-top:1px solid var(--line);background:rgba(0,0,0,.22)}
 .footer-inner{padding:30px 18px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
